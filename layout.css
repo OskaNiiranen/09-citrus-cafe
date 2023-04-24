@@ -17,6 +17,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 10px;
+  margin-left: 1rem;
 }
 .main-nav ul > * {
   flex-grow: 1;
@@ -29,16 +30,34 @@ body {
   background-color: #9dcd7c;
 }
 article {
-  max-width: 33%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 section {
   border: solid white 1rem;
   background-color: white;
   margin: 1rem;
   text-align: left;
+  flex-basis: 33.33%;
 }
-.box {
-  max-width: 33%;
+.vision {
+  border: solid white 1rem;
+  background-color: #e3dbc0;
+  margin: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+}
+header {
+  margin: auto;
+}
+.vision img {
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  float: right;
 }
 div {
   background-color: lightgray;
@@ -50,6 +69,7 @@ caption {
   text-align: right;
 }
 img {
+  display: flex;
   max-width: 100%;
   margin-top: 1rem;
 }
@@ -64,14 +84,6 @@ svg {
   float: right;
   margin-top: -0.5rem;
 }
-.vision {
-  border: solid white 1rem;
-  background-color: #e3dbc0;
-  margin: 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-}
 @media screen and (max-width: 425px) {
   .main-nav ul {
     flex-direction: column;
@@ -80,7 +92,11 @@ svg {
     max-width: none;
   }
   .vision {
-    flex-direction: column;
+    background-color: transparent;
+    border: transparent;
+  }
+  .vision img {
+    display: none;
   }
 }
 @media screen and (min-width: 768px) {
