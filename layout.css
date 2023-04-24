@@ -7,10 +7,10 @@ body {
   padding: 10px;
   font-size: 1.6rem;
   background-color: #83c05b;
-  max-width: 800px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  flex-basis: 100%;
 }
 .main-nav ul {
   display: flex;
@@ -20,12 +20,71 @@ body {
 }
 .main-nav ul > * {
   flex-grow: 1;
-  flex-basis: 100%;
+  flex-basis: 0%;
   padding: 1rem;
   text-align: center;
   color: white;
-  border: solid black 1px;
+  border: solid 1px #689845;
+  border-radius: 10px;
+  background-color: #9dcd7c;
+}
+article {
+  max-width: 33%;
 }
 section {
-  border: solid white;
+  border: solid white 1rem;
+  background-color: white;
+  margin: 1rem;
+  text-align: left;
+}
+.box {
+  max-width: 33%;
+}
+div {
+  background-color: lightgray;
+  padding: 1rem;
+}
+caption {
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: right;
+}
+img {
+  max-width: 100%;
+  margin-top: 1rem;
+}
+samp {
+  text-align: left;
+}
+.info {
+  color: white;
+}
+svg {
+  max-width: 1.5rem;
+  float: right;
+  margin-top: -0.5rem;
+}
+.vision {
+  border: solid white 1rem;
+  background-color: #e3dbc0;
+  margin: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 425px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+  .main-nav ul > * {
+    max-width: none;
+  }
+  .vision {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    padding: 0 2rem 0 2rem;
+  }
 }
