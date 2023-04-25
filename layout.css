@@ -3,25 +3,20 @@ html {
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 1rem;
-  padding: 10px;
   font-size: 1.6rem;
   background-color: #83c05b;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  flex-basis: 100%;
+}
+.logo {
+  max-width: 100%;
 }
 .main-nav ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  border-radius: 10px;
   margin-left: 1rem;
+  margin-right: -1rem;
 }
 .main-nav ul > * {
   flex-grow: 1;
-  flex-basis: 0%;
   padding: 1rem;
   text-align: center;
   color: white;
@@ -37,24 +32,24 @@ article {
 section {
   border: solid white 1rem;
   background-color: white;
-  margin: 1rem;
+  margin: 0rem -1rem 1rem 1rem;
   text-align: left;
   flex-basis: 33.33%;
 }
 .vision {
   border: solid white 1rem;
   background-color: #e3dbc0;
-  margin: 1rem;
   text-align: center;
   display: flex;
   flex-direction: row;
-  min-width: 100%;
+  flex-basis: 100%;
+  margin-top: 1rem;
 }
 header {
   margin: auto;
 }
-.vision img {
-  margin: auto;
+.vision-image {
+  display: flex;
   max-width: 100%;
   max-height: 100%;
   float: right;
@@ -63,18 +58,33 @@ div {
   background-color: lightgray;
   padding: 1rem;
 }
-caption {
-  font-weight: bold;
-  font-size: 5rem;
-  text-align: right;
-}
-img {
+
+.tasty,
+.interior {
+  padding-top: 1rem;
   display: flex;
   max-width: 100%;
-  margin-top: 1rem;
 }
-samp {
+.newslist {
+  display: flex;
+  flex-direction: column;
+}
+/* TAPAHTUMAT FLEXTATAAN RIVIIN */
+.newslist ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+}
+/* PÄIVÄMÄÄRIIN BOLDAUS, RAJAUS JA OIKEALLE MARGIN */
+.newslist ul li:first-child {
+  font-weight: 700;
+  width: 4rem;
+  margin-right: 1rem;
+}
+footer {
   text-align: left;
+  margin: 0rem 0rem 1rem 1rem;
 }
 .info {
   color: white;
@@ -85,11 +95,24 @@ svg {
   margin-top: -0.5rem;
 }
 @media screen and (max-width: 425px) {
+  article {
+    display: block;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
   .main-nav ul {
+    display: block;
     flex-direction: column;
   }
   .main-nav ul > * {
-    max-width: none;
+    flex-grow: 1;
+    flex-basis: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    border: solid 1px #689845;
+    border-radius: 10px;
+    background-color: #9dcd7c;
   }
   .vision {
     background-color: transparent;
@@ -99,8 +122,25 @@ svg {
     display: none;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+  .box1,
+  .box2 {
+    flex-grow: 1;
+  }
+  .box3 {
+    flex-basis: 100%;
+  }
+}
+@media screen and (min-width: 769px) {
   body {
-    padding: 0 2rem 0 2rem;
+    margin: 0rem 3rem 0rem 1rem;
+  }
+  .box2 {
+    padding-inline-end: 0.5rem;
+  }
+  /* OTETAAN KOLMAS LAATIKKO MUKAAN RIVIIN */
+  .box3 {
+    flex-basis: 0;
+    flex-grow: 1;
   }
 }
