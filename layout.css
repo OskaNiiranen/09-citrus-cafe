@@ -130,6 +130,9 @@ svg {
   .box3 {
     flex-basis: 100%;
   }
+  .vision {
+    max-height: 200px;
+  }
 }
 @media screen and (min-width: 769px) {
   body {
@@ -142,5 +145,10 @@ svg {
   .box3 {
     flex-basis: 0;
     flex-grow: 1;
+  }
+  @media screen and (max-width: 1024px) {
+    .vision {
+      max-height: 300px;
+    }
   }
 }
