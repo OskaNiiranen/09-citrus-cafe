@@ -1,20 +1,25 @@
+/* ASETETAAN RESETIN JÄLKEEN FONTIN KOKO 10, JOTTA MYÖHEMMIN ON HELPOMPI HALLITA FONTIN KOKOJA */
 html {
   font-size: 62.5%;
 }
+/* MÄÄRITETÄÄN BODYSSA SIVULLA KÄYTETTÄVÄ FONTTI, OLETUS FONTTIKOKO JA SIVUN TAUSTAVÄRI */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.6rem;
   background-color: #83c05b;
 }
+/* TEHDÄÄN LOGOSTA RESPONSIIVINEN */
 .logo {
   max-width: 100%;
 }
+/* OLETUKSENA NAVIGOINTIPALKKI FLEXAA SIVUTTAISSUUNNASSA. SÄÄDETÄÄN MARGINEJA */
 .main-nav ul {
   display: flex;
   flex-direction: row;
   margin-left: 1rem;
   margin-right: -1rem;
 }
+/* NAVIGOINTIPALKIN PAINIKKEET (LAPSET) ASETETAAN OLETUKSENA TÄYTTÄMÄÄN LEVEYSSUUNNASSA BODYN SISÄLLÄ OLEVA TILA. MÄÄRITETÄÄN NAVIGOINTIPALKIN ULKOASU */
 .main-nav ul > * {
   flex-grow: 1;
   padding: 1rem;
@@ -24,11 +29,13 @@ body {
   border-radius: 10px;
   background-color: #9dcd7c;
 }
+/* KAIKKI BODYSSA ON TÄMÄN SISÄLLÄ. MÄÄRITETÄÄN OLETUKSENA SIVU FLEXAAMAAN SIVUTTAISSUUNNASSA JA ELEMENTTIEN OLEMAAN VIEREKKÄIN, JOS BODYSSA ON TARPEEKSI TILAA */
 article {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+/* MÄÄRITETÄÄN LAATIKOIDEN OLETUS ULKOASU JA NIIDEN ALOITUSKOKO, MISTÄ NE ALKAVAT FLEXAAMAAN. NÄIN LAATIKOITA MAHTUU YHDELLE RIVILLE 3 KAPPALETTA */
 section {
   border: solid white 1rem;
   background-color: white;
@@ -36,84 +43,89 @@ section {
   text-align: left;
   flex-basis: 33.33%;
 }
+/* YLIN LAATIKKO EROAA MUISTA LAATIKOISTA. TÄSSÄ MÄÄRITELLÄÄN SEN ULKOASU, JA ETTÄ OLETUKSENA SE TÄYTTÄÄ SIVUTTAISSUUNNASSA BODYN SISÄLLÄ OLEVAN TILAN */
 .vision {
   border: solid white 1rem;
   background-color: #e3dbc0;
   text-align: center;
   display: flex;
-  flex-direction: row;
   flex-basis: 100%;
   margin-top: 1rem;
 }
+/* TÄMÄ ON ENSIMMÄISEN LAATIKON SISÄLLÄ OLEVA PÄÄOTSIKKO. MARGIN AUTO ASETTAA SEN OLEMAAN KESKELLÄ LAATIKKOA */
 header {
   margin: auto;
 }
+/* ENSIMMÄISEN LAATIKON KUVA. TÄSSÄ TEHDÄÄN SIITÄ RESPONSIIVINEN JA MÄÄRITETÄÄN SE OLEMAAN LAATIKON OIKEASSA REUNASSA */
 .vision-image {
   display: flex;
   max-width: 100%;
   max-height: 100%;
   float: right;
 }
+/* NÄMÄ OVAT KOLMEN ALIMMAN LAATIKON SISÄLLÄ OLEVA PAINIKE. TÄSSÄ MÄÄRITELLÄÄN NIIDEN ULKOASU */
 div {
   background-color: lightgray;
   padding: 1rem;
 }
-
+/* NÄMÄ OVAT HARMAIDEN PAINIKKEIDEN SISÄLLÄ OLEVAT NUOLET. TÄSSÄ MÄÄRITELLÄÄN NIIDEN KOKO JA SIJAINTI PAINIKKEEN SISÄLLÄ */
+svg {
+  max-width: 1.5rem;
+  float: right;
+  margin-top: -0.5rem;
+}
+/* NÄMÄ OVAT TOISEN JA KOLMANNEN LAATIKON SISÄLLÄ OLEVAT KUVAT. TÄSSÄ TEHDÄÄN NIISTÄ RESPONSIIVISET JA TEHDÄÄN VÄLI NIIDEN JA PAINIKKEIDEN VÄLIIN */
 .tasty,
 .interior {
   padding-top: 1rem;
   display: flex;
   max-width: 100%;
 }
+/* VIIMEINEN/ALIN LAATIKKO. TÄSSÄ MÄÄRITETÄÄN SE FLEXAAMAAN OLETUKSENA PYSTYSUUNNASSA, ELI LAATIKON SISÄLLÄ OLEVAT ELEMENTIT FLEXAAVAT KESKENÄÄN PYSTYSUUNNASSA */
 .newslist {
   display: flex;
   flex-direction: column;
 }
-/* TAPAHTUMAT FLEXTATAAN RIVIIN */
+/* VIIMEISEN LAATIKON SISÄLLÄ OLEVA UUTISLISTA. JOKAINEN RIVI ON OMA LISTANSA JA TÄSSÄ MÄÄRITETÄÄN PÄIVÄMÄÄRÄ JA UUTINEN FLEXAAMAAN SIVUTTAISSUUNNASSA JA EI ANNETA SAMALLE RIVILLE TULLA MUUTA. MARGIN TOP TEKEE PIENEN VÄLIN NÄIDEN RIVIEN VÄLIIN */
 .newslist ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0.5rem;
+  flex-wrap: nowrap;
+  margin-top: 0.5rem;
 }
-/* PÄIVÄMÄÄRIIN BOLDAUS, RAJAUS JA OIKEALLE MARGIN */
+/* PÄIVÄMÄÄRIIN BOLDAUS, KOON MÄÄRITYS JA OIKEALLE MARGIN, JOTTA PÄIVÄMÄÄRILLÄ ON TARPEEKSI TILAA */
 .newslist ul li:first-child {
   font-weight: 700;
   width: 4rem;
   margin-right: 1rem;
 }
+/* YHTEYSTIEDOT JA SOME-PAINIKKEET OVAT TÄÄLLÄ. TÄSSÄ MÄÄRITELLÄÄN TEKSTIN OLEMAAN VASEMMALLA JA ALAS, SEKÄ VASEMMALLE VÄHÄN MARGINIA */
 footer {
   text-align: left;
   margin: 0rem 0rem 1rem 1rem;
 }
+/* TÄSSÄ TEHDÄÄN OSOITETIETOJEN FONTISTA VALKOINEN */
 .info {
   color: white;
 }
-svg {
-  max-width: 1.5rem;
+/* NÄMÄ OVAT SOME-PAINIKKEET. TÄSSÄ MÄÄRITETÄÄN NIIDEN SIJAINTI FOOTERIN SISÄLLÄ JA TEHDÄÄN NIIDEN VÄLIIN PIENI VÄLI */
+i {
   float: right;
-  margin-top: -0.5rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
 }
+/* TÄSSÄ MÄÄRITETÄÄN MOBIILINÄKYMÄN SÄÄNNÖT NÄYTÖILLE JOTKA OVAT ENINTÄÄN 425 PIKSELIÄ LEVEITÄ. */
 @media screen and (max-width: 425px) {
+  /* MÄÄRITETÄÄN SIVUN ELEMENTIT FLEXAAMAAN PYSTYSUUNNASSA EIKÄ PÄÄSTÄMÄÄN VIEREEN MUITA ELEMENTTEJÄ  */
   article {
-    display: block;
     flex-wrap: nowrap;
     flex-direction: column;
   }
+  /* MÄÄRITETÄÄN NAVIGOINTIPALKKI FLEXAAMAAN PYSTYSUUNNASSA */
   .main-nav ul {
-    display: block;
     flex-direction: column;
   }
-  .main-nav ul > * {
-    flex-grow: 1;
-    flex-basis: 100%;
-    padding: 1rem;
-    text-align: center;
-    color: white;
-    border: solid 1px #689845;
-    border-radius: 10px;
-    background-color: #9dcd7c;
-  }
+  /* PIILOTETAAN ENSIMMÄISESTÄ LAATIKOSTA KAIKKI MUU PAITSI TEKSTI MOBIILINÄKYMÄSSÄ */
   .vision {
     background-color: transparent;
     border: transparent;
@@ -122,33 +134,42 @@ svg {
     display: none;
   }
 }
+/* MÄÄRITELLÄÄN TABLETTINÄKYMÄN SÄÄNÖT NÄYTÖILLE JOTKA OVAT MAKSIMISSAAN 768 PIKSELIÄ LEVEITÄ */
 @media screen and (max-width: 768px) {
+  /* MÄÄRITETÄÄN ENSIMMÄISEN LAATIKON MAKSIMIKORKEUS */
+  .vision {
+    max-height: 200px;
+  }
+  /* MÄÄRITETÄÄN TOINEN JA KOLMAS LAATIKKO YHDESSÄ TÄYTTÄMÄÄN BODYN SISÄLLÄ OLEVA TILA LEVEYSSUUNNASSA */
   .box1,
   .box2 {
     flex-grow: 1;
   }
+  /* MÄÄRITETÄÄN VIIMEINEN LAATIKKO VIEMÄÄN YKSIN KOKO BODYN SISÄLLÄ OLEVA TILA LEVEYSSUUNNASSA */
   .box3 {
     flex-basis: 100%;
   }
-  .vision {
-    max-height: 200px;
-  }
 }
+/* MÄÄRITETÄÄN LAPTOP-NÄKYMÄN SÄÄNNÖT NÄYTÖILLE JOIDEN MINIMILEVEYS ON 769 PIKSELIÄ */
 @media screen and (min-width: 769px) {
+  /* LAITETAAN BODYN OIKEALLE JA VASEMMALLE PUOLELLE VÄHÄN MARGINIA */
   body {
     margin: 0rem 3rem 0rem 1rem;
   }
-  .box2 {
-    padding-inline-end: 0.5rem;
-  }
-  /* OTETAAN KOLMAS LAATIKKO MUKAAN RIVIIN */
+  /* OTETAAN VIIMEINEN LAATIKKO MUKAAN RIVIIN */
   .box3 {
     flex-basis: 0;
     flex-grow: 1;
   }
-  @media screen and (max-width: 1024px) {
-    .vision {
-      max-height: 300px;
-    }
+}
+/* MÄÄRITELLÄÄN SÄÄNNÖT NÄYTÖILLE JOIDEN MAKSIMILEVEYS ON 1024 PIKSELIÄ */
+@media screen and (max-width: 1024px) {
+  /* MÄÄRITELLÄÄN ENSIMMÄISEN LAATIKON MAKSIMIKORKEUS */
+  .vision {
+    max-height: 300px;
+  }
+  /* MÄÄRITELLÄÄN UUTISLISTAN FONTIN KOKO */
+  .newslist ul {
+    font-size: small;
   }
 }
